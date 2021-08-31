@@ -1,4 +1,4 @@
-﻿module ProjectEuler.Problem1
+﻿module Problem1
 
 let isMultipleOf3 x =
     x % 3 = 0

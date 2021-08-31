@@ -1,4 +1,4 @@
-﻿module ProjectEuler.Problem2
+﻿module Problem2
 
 let run2() =
     0
