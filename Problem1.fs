@@ -1,23 +1,17 @@
 ﻿module Problem1
 
-let isMultipleOf3 x =
-    x % 3 = 0
-
-let isMultipleOf5 x =
-    x % 5 = 0
+let isMultipleOf3or5 x =
+    if x % 3 = 0 || x % 5 = 0 then true
+    else false
     
 let printer x =
-    printfn $"{x}"
+    printfn $"%d{x}"
     
-let filterThrees =
-        List.filter isMultipleOf3
-        
-let filterFives =
-        List.filter isMultipleOf5
+let filter =
+        List.filter isMultipleOf3or5
 
 let run1() =
     printfn "Problem1"
-    let result = (filterThrees [1..999] @ filterFives [1..999])
-    let cleanResult = List.distinct result
-    let answer = List.sum cleanResult |> printer
+    let result = filter [1..999]
+    let answer = List.sum result |> printer
     0
