@@ -1,17 +1,19 @@
 ﻿module Problem1
 
 let isMultipleOf3or5 x =
-    if x % 3 = 0 || x % 5 = 0 then true
-    else false
+    if x % 3 = 0 || x % 5 = 0
+    then Some(x)
+    else None
     
 let printer x =
     printfn $"%d{x}"
-    
-let filter =
-        List.filter isMultipleOf3or5
 
 let run1() =
     printfn "Problem1"
-    let result = filter [1..999]
-    let answer = List.sum result |> printer
+    let result =
+        seq [1..1000]
+        |> Seq.choose isMultipleOf3or5
+        |> Seq.takeWhile (fun elem -> elem < 1000)
+        |> Seq.sum
+        |> printer
     0
